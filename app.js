@@ -67,8 +67,6 @@
         let dinoWeight = dino.weight;
         let humanWeight = parseInt(human.weight);
 
-        debugger;
-
         let difference = '';
 
         if(dinoWeight > humanWeight) {
@@ -87,8 +85,6 @@
     Dino.prototype.compareHeight = function (dino, human) {
         let dinoHeight = dino.height;
         let humanHeight = (parseInt(human.feet) * 12) + parseInt(human.inches);
-
-        debugger;
 
         let difference = '';
 
@@ -116,7 +112,6 @@
     }
 
     function createFacts(dinoArray, humanObj) {
-        debugger;
         dinoArray.map(dino => {
             if(dino.species !== "Pigeon") {
                 let dietFact = dino.compareDiet(dino, humanObj);
@@ -127,7 +122,6 @@
                 let weight = `Weight:  ${dino.weight} lbs`;
                 let height = `Height:  ${dino.height} inches`;
                 let diet = `Diet:  ${dino.diet}`
-                debugger;
                 dino.facts.push(dietFact, heightFact, weightFact, location, time, weight, height, diet);
             }
         });
@@ -138,7 +132,6 @@
         // Add tiles to DOM
 
     function generateGrid(dinoHumanArray) {
-        debugger;
         let grid = document.getElementById("grid");
 
         dinoHumanArray.forEach(obj => {
@@ -169,7 +162,6 @@
                 } else {
                     randomIndex = 0;
                 }
-                debugger;
                 factParagraph.innerHTML = obj.facts[randomIndex];
                 tile.appendChild(factParagraph);
             }
@@ -183,7 +175,6 @@
     // Generate dino human array
 
     function createDinoHumanArray(dinos, human) {
-        debugger;
         return dinos.slice(0,4).concat([human]).concat(dinos.slice(4,8));
     }
     
@@ -206,12 +197,9 @@ function btnClick() {
     .then(response => response.json())
     .then(dinoData => {
         let dinos = dinoObjects(dinoData);
-        debugger;
 
         let human = humanData();
         createFacts(dinos, human);
-
-        debugger;
 
         let dinoHumanArray = createDinoHumanArray(dinos, human);
 
