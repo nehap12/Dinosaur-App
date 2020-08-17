@@ -90,26 +90,26 @@ Dino.prototype.compareDiet = function (dino, human) {
 function createFacts(dinoArray, humanObj) {
     dinoArray.map(dino => {
         if(dino.species !== "Pigeon") {
-            let randomIndex = Math.floor(Math.random() * Math.floor(10));
+            let randomIndex = Math.floor(Math.random() * Math.floor(9));
             let fact = '';
 
-            if(randomIndex === 1) {
+            if(randomIndex === 0) {
                 fact = dino.compareDiet(dino, humanObj);
-            } else if (randomIndex === 2) {
+            } else if (randomIndex === 1) {
                 fact = dino.compareHeight(dino, humanObj);
-            } else if (randomIndex === 3) {
+            } else if (randomIndex === 2) {
                 fact = dino.compareWeight(dino, humanObj);
-            } else if (randomIndex === 4) {
+            } else if (randomIndex === 3) {
                 fact = `Location:  ${dino.location}`;
-            } else if (randomIndex === 5) {
+            } else if (randomIndex === 4) {
                 fact = `Lived during:  ${dino.time}`;
-            } else if (randomIndex === 6) {
+            } else if (randomIndex === 5) {
                 fact = `Weight:  ${dino.weight} lbs`;
-            } else if (randomIndex === 7) {
+            } else if (randomIndex === 6) {
                 fact = `Height:  ${dino.height} inches`;
-            } else if (randomIndex === 8) {
+            } else if (randomIndex === 7) {
                 fact = `Diet:  ${dino.diet}`
-            } else if (randomIndex === 9) {
+            } else if (randomIndex === 8) {
                 fact = dino.fact;
             }
 
@@ -167,7 +167,7 @@ function createDinoHumanArray(dinos, human) {
 // On button click, prepare and display infographic
 
 window.onload = function () {
-    var btn = document.getElementById("btn");
+    let btn = document.getElementById("btn");
     if (btn.addEventListener) {
         btn.addEventListener("click", btnClick, false);
     } else if (btn.attachEvent) {
